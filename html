@@ -1,0 +1,91 @@
+<html>  
+    <head>
+        <style>
+            #main{width : 300px ; height : 280px; background-color: green ;}
+            input{ width : 20% ; height : 40px ; font-size: 20px ; margin : 6px ; }
+            #sus { width : 96% ; height : 50px ; background-color: silver;}
+
+
+        </style>
+
+    </head>
+    <body>
+        <div id = "main">
+            <form name = "f">
+                <input type = "text " name = "box1" placeholder="0" id = "sus">  <br>           
+                <input type = "button" value = "1" onclick = "f.box1.value+=1">
+                <input type = "button" value = "2" onclick = "f.box1.value+=2">
+                <input type = "button" value = "3" onclick = "f.box1.value+=3">
+                <input type = "button" value = "+" onclick = "add()">
+                <br>          
+                <input type = "button" value = "4" onclick = "f.box1.value+=4">
+                <input type = "button" value = "5" onclick = "f.box1.value+=5">
+                <input type = "button" value = "6" onclick = "f.box1.value+=6">
+                <input type = "button" value = "-" onclick = "sub()">
+                <br>           
+                <input type = "button" value = "7" onclick = "f.box1.value+=7">
+                <input type = "button" value = "8" onclick = "f.box1.value+=8">
+                <input type = "button" value = "9" onclick = "f.box1.value+=9">
+                <input type = "button" value = "/" onclick = "div()">
+                <br>           
+                <input type = "button" value = "c" onclick = "f.box1.value=''">
+                <input type = "button" value = "0" onclick = "f.box1.value+=0">
+                <input type = "button" value = "=" onclick = "f.box1.value=eval(f.box1.value)">
+                <input type = "button" value = "x" onclick = "mul()">
+                <br>
+
+            </form>
+        </div>
+        <script>
+            function add() {
+                var act = 0 , b = 0;
+                act = f.box1.value;
+                b = act.charAt(act.length - 1 );
+                if(b == '+' || b == '-' || b == '/' || b == '*') {
+                    f.box1.value = act.substring(0 , act.length - 1 );
+                    f.box1.value+= '+';
+                } else {
+                    f.box1.value+= '+';
+                }
+            }
+            function mul() {
+                var act = 0 , b = 0;
+                act = f.box1.value;
+                b = act.charAt(act.length - 1 );
+                if(b == '+' || b == '-' || b == '/' || b == '*') {
+                    f.box1.value = act.substring(0 , act.length - 1 );
+                    f.box1.value+= '*';
+                } else {
+                    f.box1.value+= '*';
+                }
+            }
+
+            function sub() {
+                var act = 0 , b = 0;
+                act = f.box1.value;
+                b = act.charAt(act.length - 1 );
+                if(b == '+' || b == '-' || b == '/' || b == '*') {
+                    f.box1.value = act.substring(0 , act.length - 1 );
+                    f.box1.value+= '-';
+                } else {
+                    f.box1.value+= '-';
+                }
+            }
+
+            function div() {
+                var act = 0 , b = 0;
+                act = f.box1.value;
+                b = act.charAt(act.length - 1 );
+                if(b == '+' || b == '-' || b == '/' || b == '*') {
+                    f.box1.value = act.substring(0 , act.length - 1 );
+                    f.box1.value+= '/';
+                } else {
+                    f.box1.value+= '/';
+                }
+            }
+
+
+               
+        </script>
+    </body>
+</html>
